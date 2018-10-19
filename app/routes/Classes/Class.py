@@ -1,4 +1,8 @@
-from mongoengine import Document
+from mongoengine import Document, ListField, EmbeddedDocument, EmbeddedDocumentField, ReferenceField
+from .Teacher import Teacher
+
+class Period(EmbeddedDocument):
+    teachers = ReferenceField(Teacher)
 
 class Class(Document):
-    pass
+    periods = ListField(EmbeddedDocumentField(Period))
