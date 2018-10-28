@@ -1,1 +1,1 @@
-from .ClassForm import *
+from .CourseForm import *
