@@ -1,2 +1,2 @@
-from .ClassForm import *
+from .CourseForm import *
 from .TeacherForm import TeacherForm

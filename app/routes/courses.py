@@ -1,20 +1,20 @@
 from flask import render_template, request
 from app.routes import app
-from .Forms import ClassForm
-from .Classes import Class
+from .Forms import CourseForm
+from .Classes import Course
 
 
 @app.route("/classes", methods=["POST", "GET"])
 def classes():
 
-    form = ClassForm(request.form)
+    form = CourseForm(request.form)
 
     if form.validate() and request.method == "POST":
 
-        classObj = Class()
+        courseObj = Course()
 
-        classObj.name = form.name.data
+        courseObj.name = form.name.data
 
-        classObj.save()
+        courseObj.save()
 
-    return render_template("classes.html", form=form)
+    return render_template("courses.html", form=form)
