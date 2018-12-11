@@ -1,7 +1,7 @@
 Click==7.0
 Flask==1.0.2
 Flask-WTF==0.14.2
-ItsDangerous==1.0.0
+itsdangerous==1.1.0
 Jinja2==2.10
 MarkupSafe==1.0
 mongoengine==0.15.3
