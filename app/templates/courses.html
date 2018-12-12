@@ -3,13 +3,12 @@
 {% block body %}
     <div class="jumbotron">
         <form method=post>
-            {{ form.hidden_tag() }}
-            {{ form.name.label }}
-            {{ form.name() }}
+                {{ form.hidden_tag() }}
+                {{ form.name.label }}
+                {{ form.name() }}
             <br>
-            {{ form.submit.label }}
-            {{ form.submit() }}
-
+                {{ form.submit.label }}
+                {{ form.submit() }}
         </form>
     </div>
 {% endblock %}
