@@ -4,7 +4,6 @@ from flask import render_template, session, redirect, request
 from requests_oauth2.services import GoogleClient
 from requests_oauth2 import OAuth2BearerToken
 
-
 google_auth = GoogleClient(
     client_id=("961404899755-6sibtis1hhfs6qtnt4u1ak6r5s2j8vm6"
                ".apps.googleusercontent.com"),
