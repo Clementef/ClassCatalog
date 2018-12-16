@@ -2,9 +2,5 @@ from mongoengine import Document, ListField, EmbeddedDocument, EmbeddedDocumentF
 
 
 class Course(Document):
-
-    name = StringField()
-
+    name = StringField(required=True)
     subject = StringField()
-
-
