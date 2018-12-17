@@ -5,6 +5,7 @@
     <div class="containter">
         <div class="jumbotron">
             <h1>{{ teacher.name }}</h1>
+            <a href={{ "mailto:{}".format(teacher.email) }}>{{ teacher.email }}</a>
         </div>
     </div>
 
