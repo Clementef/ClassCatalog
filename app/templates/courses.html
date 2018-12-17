@@ -6,7 +6,7 @@
     <h2>Courses</h2>
     <div class="list-group">
         {% for result in results %}
-            <a href={{ "/course/{}".format(result.name.replace(" ","")) }} class="list-group-item">{{result.name}}</a>
+            <a href={{ "/course/{}".format(result.name.replace(" ","").replace("/", "")) }} class="list-group-item">{{result.name}}</a>
         {% endfor %}
     </div>
 </div>
