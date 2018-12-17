@@ -52,6 +52,8 @@ def login():
     session["routeName"] = data["displayName"].replace(" ", "_")
     if data["emails"][0]["value"][1] == "_":
         return "Students not allowed"
+    elif data["emails"][0]["value"][-8:] != "@ousd.org":
+        return "Must be OT Teacher"
     return redirect("/")
 
 
