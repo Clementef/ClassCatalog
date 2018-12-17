@@ -1,5 +1,20 @@
 {% extends "base.html" %}
 
 {% block body %}
-    {{ teacher.name }}
+
+    <div class="containter">
+        <div class="jumbotron">
+            <h1>{{ teacher.name }}</h1>
+        </div>
+    </div>
+
+    <!--<div class="containter">-->
+        <!--<div class="jumbotron">-->
+
+        <!--{% for section in sections %}-->
+            <!--<p>{{section.course.name}}</p>-->
+        <!--{% endfor %}-->
+
+        <!--</div>-->
+    <!--</div>-->
 {% endblock %}
