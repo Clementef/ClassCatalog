@@ -1,4 +1,4 @@
-from mongoengine import Document, ListField, EmbeddedDocument, EmbeddedDocumentField, ReferenceField, StringField, IntField
+from mongoengine import Document, StringField
 
 
 class Course(Document):

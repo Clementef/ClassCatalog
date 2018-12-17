@@ -1,9 +1,11 @@
 from mongoengine import Document, StringField, ReferenceField
-from .Section import Section
+from .Teacher import Teacher
+from .Course import Course
 
 
 class Room(Document):
 
     location = StringField()
 
-    section = ReferenceField(Section)
+    teacher = ReferenceField(Teacher)
+    course = ReferenceField(Course)
