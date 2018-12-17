@@ -16,8 +16,8 @@ def searchteachers(find):
         else:
             for j in Teacher.objects:
                 if i in j.name.lower():
-                name = dict(name=j.name)
-                ls.append(name)
+                    name = dict(name=j.name)
+                    ls.append(name)
     return ls
 
 
