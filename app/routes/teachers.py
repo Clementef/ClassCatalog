@@ -6,5 +6,6 @@ from .Classes import Teacher
 
 @app.route("/teachers", methods=["POST", "GET"])
 def teachers():
+    return render_template("teachers.html", results=Teacher.objects)
 
-    return render_template("teachers.html")
+# name id email
