@@ -35,7 +35,7 @@
                     {% if searchby == "teacher" %}
                         <a href={{ "/teacher/{}".format(result.name.replace(" ","")) }} class="list-group-item">{{result.name}}</a>
                     {% elif searchby == "course" %}
-                        <a href={{ "/course/{}".format(result.name.replace(" ","")) }} class="list-group-item">{{result.name}}</a>
+                        <a href={{ "/course/{}".format(result.name.replace(" ","").replace("/", "")) }} class="list-group-item">{{result.name}}</a>
                     {% elif searchby == "room" %}
                         <a href={{ "/room/{}".format(result.name.replace(" ","")) }} class="list-group-item">{{result.name}}</a>
                     {% endif %}

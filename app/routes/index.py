@@ -15,6 +15,7 @@ google_auth = GoogleClient(
     # "https://computerinv-216303.appspot.com/oauth2callback"
 )
 
+
 @app.route('/', methods=['GET','POST'])
 def index():
     form = SearchForm(request.form)

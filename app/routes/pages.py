@@ -20,7 +20,7 @@ def coursepage(name):
 
     for i in Course.objects:
 
-        if name == i.name.replace(" ", ""):
+        if name == i.name.replace(" ", "").replace("/", ""):
 
             return render_template("coursepage.html", course=i)
 
