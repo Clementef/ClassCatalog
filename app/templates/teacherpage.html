@@ -9,13 +9,12 @@
         </div>
     </div>
 
-    <!--<div class="containter">-->
-        <!--<div class="jumbotron">-->
+    <div class="containter">
+        <div class="jumbotron">
 
-        <!--{% for section in sections %}-->
-            <!--<p>{{section.course.name}}</p>-->
-        <!--{% endfor %}-->
-
-        <!--</div>-->
-    <!--</div>-->
+            {% for section in sections %}
+                <p>Period {{ section.period }}: <a href={{ "/course/{}".format(section.course.name.replace(" ", "").replace("/", "")) }}>{{section.course.name}}</a> in <a href={{ "/room/{}".format(section.room.location) }}>{{ section.room.location }}</a></p>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

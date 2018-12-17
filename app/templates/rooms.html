@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+<div class="container">
+    <h2>Rooms</h2>
+    <div class="list-group">
+        {% for i in rooms %}
+            <a href={{ "/room/{}".format(i.location) }} class="list-group-item">{{i.location}}</a>
+        {% endfor %}
+    </div>
+</div>
+<br/>
+
+{% endblock %}

@@ -5,6 +5,10 @@
     <div class="containter">
         <div class="jumbotron">
             <h1>{{ course.name }}</h1>
+            <h3>Taught by:</h3>
+            {% for i in sections %}
+                <p><a href={{ "/teacher/{}".format(i.teacher.name.replace(" ", "")) }}>{{ i.teacher.name }}</a> in room <a href={{ "/room/{}".format(i.room.location) }}>{{ i.room.location }}</a> during period {{ i.period }}</p>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

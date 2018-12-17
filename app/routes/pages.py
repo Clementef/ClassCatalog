@@ -13,9 +13,9 @@ def teacherpage(name):
     for i in Teacher.objects:
 
         if name == i.name.replace(" ", ""):
-            return render_template("teacherpage.html", teacher=i)
+            return render_template("teacherpage.html", teacher=i, sections=Section.objects(teacher=i))
 
-    return
+    return "Teacher not found"
 
 
 @app.route("/course/<name>")
@@ -23,9 +23,10 @@ def coursepage(name):
     for i in Course.objects:
 
         if name == i.name.replace(" ", "").replace("/", ""):
-            return render_template("coursepage.html", course=i)
+            return render_template("coursepage.html", course=i, sections=Section.objects(course=i))
 
-    return "Course Not Found"
+    return "Course not found"
+
 
 @app.route("/room/<name>")
 def roompage(name):
@@ -35,3 +36,5 @@ def roompage(name):
         if name in i.location:
 
             return render_template("roompage.html", room=i)
+
+    return "Room not found"
