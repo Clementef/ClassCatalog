@@ -1,4 +1,4 @@
-from app.routes.Classes import Teacher, Course
+from app.routes.Classes import Teacher, Course, Room
 
 
 def searchteachers(find):
@@ -36,4 +36,14 @@ def searchcourses(find):
     return ls
 
 
+def searchroom(find):
 
+    ls = []
+    find.lower()
+
+    for j in Room.objects:
+        if find in j.location.lower():
+            name = dict(name=j.location)
+            ls.append(name)
+
+    return ls

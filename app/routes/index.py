@@ -4,7 +4,7 @@ from flask import render_template, session, redirect, request
 from requests_oauth2.services import GoogleClient
 from requests_oauth2 import OAuth2BearerToken
 from .Forms import SearchForm
-from .misc import searchteachers, searchcourses
+from .misc import searchteachers, searchcourses, searchroom
 
 google_auth = GoogleClient(
     client_id=("961404899755-6sibtis1hhfs6qtnt4u1ak6r5s2j8vm6"
@@ -35,7 +35,7 @@ def index():
     elif searchby == 'course':
         results = searchcourses(searchterm)
     elif searchby == 'room':
-        results = []
+        results = searchroom(searchterm)
 
     return render_template("index.html", form=form, searchterm=searchterm, searchby=searchby, results=results)
 

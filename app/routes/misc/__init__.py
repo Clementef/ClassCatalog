@@ -1,1 +1,1 @@
-from .search import searchcourses, searchteachers
+from .search import *

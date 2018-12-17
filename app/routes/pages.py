@@ -26,3 +26,12 @@ def coursepage(name):
             return render_template("coursepage.html", course=i)
 
     return "Course Not Found"
+
+@app.route("/room/<name>")
+def roompage(name):
+
+    for i in Room.objects:
+
+        if name in i.location:
+
+            return render_template("roompage.html", room=i)
