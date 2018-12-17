@@ -16,7 +16,7 @@ def teacherpage(name):
 
 
 @app.route("/course/<name>")
-def teacherpage(name):
+def coursepage(name):
 
     for i in Course.objects:
 
