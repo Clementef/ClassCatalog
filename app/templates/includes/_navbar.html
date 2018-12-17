@@ -9,19 +9,19 @@
       <li class="nav-item active">
         <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="/teachers">Teachers</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="/courses">Courses</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="/rooms">Rooms</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       {% if session["displayName"] %}
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown active">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {{ session["displayName"] }}
             </a>
@@ -29,12 +29,21 @@
                 <a class="dropdown-item" href={{ "/student/" + session["displayName"].replace(" ", "_") }}>Profile</a>
                 <a class="dropdown-item" href="/logout">Logout</a>
             </div>
-            </li>
+          </li>
       {% else %}
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="/login">Login</a>
           </li>
       {% endif %}
     </ul>
   </div>
 </nav>
+
+<style>
+.navbar {
+    background-image: url({{ url_for('static', filename='navbg.png') }});
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+}
+
+</style>
