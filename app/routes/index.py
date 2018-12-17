@@ -3,6 +3,8 @@ from app.routes import app
 from flask import render_template, session, redirect, request
 from requests_oauth2.services import GoogleClient
 from requests_oauth2 import OAuth2BearerToken
+from .Forms import SearchForm
+from .misc import searchteachers, searchcourses
 
 google_auth = GoogleClient(
     client_id=("961404899755-6sibtis1hhfs6qtnt4u1ak6r5s2j8vm6"
@@ -13,10 +15,48 @@ google_auth = GoogleClient(
     # "https://computerinv-216303.appspot.com/oauth2callback"
 )
 
-
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def index():
-    return render_template("index.html")
+    form = SearchForm(request.form)
+    results = None
+
+    searchterm = ''
+    searchby='teacher'
+
+    if form.validate() and request.method == "POST":
+        searchterm = form.searchterm.data
+        form.searchterm.data = ''
+        searchby = form.searchby.data
+        form.searchby.data = ''
+
+    if searchby == 'teacher':
+        results = searchteachers(searchterm)
+    elif searchby == 'course':
+        results = searchcourses(searchterm)
+    elif searchby == 'room':
+        results = []
+
+    return render_template("index.html", form=form, searchterm=searchterm, searchby=searchby, results=results)
+
+# @app.route("/",methods=['GET','POST'])
+# def home():
+#     function = "x**2"
+#     derivative = diff(x**2,x)
+#     integral = integrate(x**2,x)
+#
+#     form = derivativeForm()
+#
+#     if form.validate_on_submit():
+#         function = form.function.data
+#         form.function.data = ''
+#         try:
+#             derivative = diff(function,x)
+#             integral = integrate(function,x)
+#         except:
+#             derivative = 'Error - Cannot Read Input'
+#             integral = 'Error - Cannot Read Input'
+#
+#     return(render_template('home.html',form=form,function=function,derivative=derivative,integral=integral))
 
 
 @app.route('/login')

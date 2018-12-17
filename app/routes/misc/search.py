@@ -11,14 +11,13 @@ def searchteachers(find):
         if len(i) == 1:
             for j in Teacher.objects:
                 if i == j.name.lower()[-1]:
-
-                    ls.append(j.name)
-
+                    name = dict(name=j.name)
+                    ls.append(name)
         else:
             for j in Teacher.objects:
                 if i in j.name.lower():
-
-                    ls.append(i)
+                name = dict(name=j.name)
+                ls.append(name)
     return ls
 
 
@@ -31,8 +30,10 @@ def searchcourses(find):
     for i in find:
         for j in Course.objects:
             if i in j.name.lower():
+                name = dict(name=j.name)
+                ls.append(name)
 
-                ls.append(i)
     return ls
+
 
 
