@@ -50,6 +50,8 @@ def login():
     data = r.json()
     session["displayName"] = data["displayName"]
     session["routeName"] = data["displayName"].replace(" ", "_")
+    if data["emails"][0]["value"][1] == "_":
+        return "Students not allowed"
     return redirect("/")
 
 
