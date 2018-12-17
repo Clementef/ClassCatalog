@@ -11,21 +11,6 @@
         {% endfor %}
     </div>
 </div>
-
-
-<!--    <div class="container">
-        <h2>You searched for {{searchterm}} by {{searchby}}</h2>
-        <div class="list-group">
-            {% for result in results %}
-                {% if searchby == "teacher" %}
-                    <a href={{ "/teacher/{}".format(result.name.replace(" ","")) }} class="list-group-item">{{result.name}}</a>
-                {% elif searchby == "course" %}
-                    <a href={{ "/course/{}".format(result.name.replace(" ","")) }} class="list-group-item">{{result.name}}</a>
-                {% elif searchby == "room" %}
-                    <a href={{ "/room/{}".format(result.name.replace(" ","")) }} class="list-group-item">{{result.name}}</a>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>-->
+<br />
 
 {% endblock %}

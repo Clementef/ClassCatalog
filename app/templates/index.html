@@ -1,19 +1,31 @@
 {% extends "base.html" %}
 
 {% block body %}
-    <div class="jumbotron">
 
-        <form method=post>
-            {{ form.hidden_tag() }}
-            {{ form.searchterm.label }}
-            {{ form.searchterm() }}
-            {{ form.searchby.label }}
-            {{ form.searchby() }}
-            <br>
-            {{form.submit()}}
-        </form>
+    {% if searchterm == "" %}
+        <div class="containter">
+            <div class="jumbotron text-center">
+                <h1>Welcome to the OT Class Catalog</h1>
+                <small>A Project by Clemente Ferrer and Jackton Levy</small>
+            </div>
+        </div>
+    {% endif %}
 
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h3>Search</h3>
+            <form method=post>
+                {{ form.hidden_tag() }}
+                {{ form.searchterm.label }}
+                {{ form.searchterm() }}
+                {{ form.searchby.label }}
+                {{ form.searchby() }}
+                <br>
+                {{form.submit()}}
+            </form>
+        </div>
     </div>
+
 
     <div class="container">
         {% if searchterm != "" %}
@@ -30,9 +42,8 @@
                 {% endfor %}
         {% endif %}
         </div>
-
-        <br />
     </div>
+    <br />
 
 
 {% endblock %}
