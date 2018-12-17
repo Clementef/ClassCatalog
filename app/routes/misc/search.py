@@ -8,10 +8,17 @@ def searchteachers(find):
     find = find.split()
 
     for i in find:
-        for j in Teacher.objects:
-            if i in j.name.lower():
-                ls.append(j.name)
+        if len(i) == 1:
+            for j in Teacher.objects:
+                if i == j.name.lower()[-1]:
 
+                    ls.append(j.name)
+
+        else:
+            for j in Teacher.objects:
+                if i in j.name.lower():
+
+                    ls.append(i)
     return ls
 
 
@@ -24,9 +31,8 @@ def searchcourses(find):
     for i in find:
         for j in Course.objects:
             if i in j.name.lower():
-                ls.append(j.name)
 
+                ls.append(i)
     return ls
-
 
 
