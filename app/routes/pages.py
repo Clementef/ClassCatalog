@@ -13,7 +13,7 @@ def teacherpage(name):
     for i in Teacher.objects:
 
         if name == i.name.replace(" ", ""):
-            return render_template("teacherpage.html", teacher=i, sections=sections)
+            return render_template("teacherpage.html", teacher=i)
 
     return
 
