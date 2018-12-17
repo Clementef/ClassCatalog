@@ -4,17 +4,8 @@ from .Forms import CourseForm
 from .Classes import Course
 
 
-@app.route("/classes", methods=["POST", "GET"])
-def classes():
+@app.route("/courses", methods=["POST", "GET"])
+def courses():
 
-    form = CourseForm(request.form)
 
-    if form.validate() and request.method == "POST":
-
-        courseObj = Course()
-
-        courseObj.name = form.name.data
-
-        courseObj.save()
-
-    return render_template("courses.html", form=form)
+    return render_template("courses.html")
