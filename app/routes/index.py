@@ -5,6 +5,7 @@ from requests_oauth2.services import GoogleClient
 from requests_oauth2 import OAuth2BearerToken
 from .Forms import SearchForm
 from .misc import searchteachers, searchcourses, searchroom
+from random import randint
 
 google_auth = GoogleClient(
     client_id=("961404899755-6sibtis1hhfs6qtnt4u1ak6r5s2j8vm6"
@@ -19,6 +20,7 @@ google_auth = GoogleClient(
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = SearchForm(request.form)
+    results = None
     results = None
 
     searchterm = ''
@@ -37,7 +39,10 @@ def index():
     elif searchby == 'room':
         results = searchroom(searchterm)
 
-    return render_template("index.html", form=form, searchterm=searchterm, searchby=searchby, results=results)
+    # background
+    bg = "bg" + str(randint(1,5)) + ".jpg"
+
+    return render_template("index.html", bg=bg, form=form, searchterm=searchterm, searchby=searchby, results=results)
 
 
 @app.route('/login')

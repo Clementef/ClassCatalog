@@ -4,14 +4,14 @@
 
     {% if searchterm == "" %}
         <div class="containter">
-            <div class="jumbotron text-center">
+            <div class="jumbotron text-center" style="background: rgba(238, 238,238, 0.9);">
                 <h1>Welcome to the OT Class Catalog</h1>
             </div>
         </div>
     {% endif %}
 
     <div class="container">
-        <div class="jumbotron text-center">
+        <div class="jumbotron text-center" style="background: rgba(238, 238,238, 0.9);">
             <h3>Search</h3>
             <form method=post>
                 {{ form.hidden_tag() }}
@@ -27,6 +27,7 @@
 
 
     <div class="container">
+        <div class="jumbotron" style="background: rgba(238, 238,238, 0.9);">
         {% if searchterm != "" %}
             <h2>You searched for {{searchterm}} by {{searchby}}</h2>
             <div class="list-group">
@@ -39,6 +40,7 @@
                         <a href={{ "/room/{}".format(result.name.replace(" ","")) }} class="list-group-item">{{result.name}}</a>
                     {% endif %}
                 {% endfor %}
+            </div>
         {% endif %}
         </div>
     </div>
