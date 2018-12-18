@@ -7,7 +7,7 @@
         <h1>{{ room.location }}</h1>
         <br>
         {% for i in sections %}
-            <p>Period {{ i.period }}: <a href={{ "/teacher/{}".format(i.teacher.name.replace(" ", "")) }}>{{ i.teacher.name }}</a> teaches <a href={{ "/course/{}}".format(i.course.name.replace(" ", "").replace("/", "")) }}>{{ i.course.name }}</a></p>
+            <p>Period {{ i.period }}: <a href={{ "/teacher/{}".format(i.teacher.name.replace(" ", "")) }}>{{ i.teacher.name }}</a> teaches <a href={{ "/course/{}".format(i.course.name.replace(" ", "").replace("/", "")) }}>{{ i.course.name }}</a></p>
         {% endfor %}
     </div>
 </div>

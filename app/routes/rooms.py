@@ -6,4 +6,4 @@ from .Classes import Room
 @app.route("/rooms")
 def rooms():
 
-    return render_template("rooms.html", rooms=Room.objects)
+    return render_template("rooms.html", rooms=Room.objects.order_by("location"))
