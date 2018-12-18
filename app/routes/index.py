@@ -8,10 +8,10 @@ from .misc import searchteachers, searchcourses, searchroom
 from random import randint
 
 google_auth = GoogleClient(
-    client_id=("961404899755-6sibtis1hhfs6qtnt4u1ak6r5s2j8vm6"
+    client_id=("463567652450-0qq4vfd8kj1to717s7vs9clgesakg3pt"
                ".apps.googleusercontent.com"),
-    client_secret="gHwNeWmkH-BjmAAIkNvc5eGl",
-    redirect_uri="http://localhost:5000/oauth2callback"
+    client_secret="TNW6NLUPmF9wLCVIln7D0GqM",
+    redirect_uri="https://otcoursecatalog.appspot.com/oauth2callback"
     # "http://localhost:5000/oauth2callback"
     # "https://computerinv-216303.appspot.com/oauth2callback"
 )
