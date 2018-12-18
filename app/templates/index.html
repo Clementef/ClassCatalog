@@ -26,9 +26,9 @@
     </div>
 
 
+    {% if searchterm != "" %}
     <div class="container">
         <div class="jumbotron" style="background: rgba(238, 238,238, 0.9);">
-        {% if searchterm != "" %}
             <h2>You searched for {{searchterm}} by {{searchby}}</h2>
             <div class="list-group">
                 {% for result in results %}
@@ -41,9 +41,9 @@
                     {% endif %}
                 {% endfor %}
             </div>
-        {% endif %}
         </div>
     </div>
+    {% endif %}
     <br />
 
 
