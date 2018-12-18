@@ -35,6 +35,6 @@ def roompage(name):
 
         if name in i.location:
 
-            return render_template("roompage.html", room=i)
+            return render_template("roompage.html", room=i, sections=Section.objects(room=i))
 
     return "Room not found"
