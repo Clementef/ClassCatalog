@@ -8,4 +8,3 @@ from .Classes import Teacher
 def teachers():
     return render_template("teachers.html", results=Teacher.objects)
 
-# name id email

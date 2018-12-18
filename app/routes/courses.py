@@ -1,6 +1,5 @@
 from flask import render_template, request
 from app.routes import app
-from .Forms import CourseForm
 from .Classes import Course
 
 

@@ -16,7 +16,7 @@ google_auth = GoogleClient(
 )
 
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     form = SearchForm(request.form)
     results = None
