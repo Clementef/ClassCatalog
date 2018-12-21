@@ -4,14 +4,14 @@
 
     {% if searchterm == "" %}
         <div class="containter">
-            <div class="jumbotron text-center" style="background: rgba(238, 238,238, 0.9);">
+            <div class="jumbotron text-center">
                 <h1>Welcome to the OT Class Catalog</h1>
             </div>
         </div>
     {% endif %}
 
     <div class="container">
-        <div class="jumbotron text-center" style="background: rgba(238, 238,238, 0.9);">
+        <div class="jumbotron text-center">
             <h3>Search</h3>
             <form method=post>
                 {{ form.hidden_tag() }}
@@ -28,7 +28,7 @@
 
     {% if searchterm != "" %}
     <div class="container">
-        <div class="jumbotron" style="background: rgba(238, 238,238, 0.9);">
+        <div class="jumbotron">
             <h2>You searched for {{searchterm}} by {{searchby}}</h2>
             <div class="list-group">
                 {% for result in results %}
